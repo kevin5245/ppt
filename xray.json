@@ -1,0 +1,45 @@
+{
+  "log": { "loglevel": "warning" },
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 10809,
+      "protocol": "http",
+      "settings": { "allowTransparent": false }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "vless",
+      "settings": {
+        "vnext": [
+          {
+            "address": "172.64.229.185",
+            "port": 443,
+            "users": [
+              {
+                "id": "2d0c171e-b6ad-480b-87e4-09ce95f0f7f5",
+                "encryption": "none"
+              }
+            ]
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "ws",
+        "security": "tls",
+        "tlsSettings": {
+          "allowInsecure": false,
+          "serverName": "xyz.ioooi.ggff.net",
+          "fingerprint": "random"
+        },
+        "wsSettings": {
+          "path": "/proxyip=126.61.114.117:29999",
+          "headers": {
+            "Host": "xyz.ioooi.ggff.net"
+          }
+        }
+      }
+    }
+  ]
+}
